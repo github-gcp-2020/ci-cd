@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Cloud Run Example</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/custom.css?cache=0" rel="stylesheet">
+</head>
+
+<body style="text-align: center;">
+    <div class="container">
+        <h1>Antai workshop</h1>
+        <div class="jumbotron center">
+            <h2>Image has been uploaded</h2>
+	    <p> {{ result.uploaded }} </p>
+	    <h2>Result: </h2>
+	    <p> {{ result.task }} </p>
+	    <div class="wrapper-button">
+              <p class="lead"></p>
+	         <form id="upload-form" action="{{ url_for('upload_image') }}" method="POST" enctype="multipart/form-data">
+              <input id="file-picker" type="file" name="file" accept="image/*" class="hidden" onchange="this.form.submit()">
+              <label for="file-picker" class="btn btn-lg btn-success">Upload another image</label>
+		 </form>
+ 	    </div>
+        </div>
+    </div>
+</body>
+ 
+</html>

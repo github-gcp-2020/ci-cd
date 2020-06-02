@@ -1,0 +1,6 @@
+runtime: python37
+
+service: process-requests
+
+manual_scaling:
+  instances: 1
